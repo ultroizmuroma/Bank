@@ -1,0 +1,161 @@
+{
+	"id": "99279aff-5602-4aaa-a702-4a54a0c604b6",
+	"name": "Bank",
+	"description": "",
+	"auth": null,
+	"events": null,
+	"variables": [],
+	"order": [
+		"2dddcb2d-00ff-412a-8f20-4ad0915a452a",
+		"9759a5e8-1dae-4768-9850-164b64917c80",
+		"d370001b-f6b0-4f42-bfa1-b1ea733c6a16",
+		"e0692e2a-f284-4fdd-b28e-e36994738148",
+		"89257bf8-a271-44bc-8b65-1531a8ad032c",
+		"d1d89d3e-d8f9-4c51-8c8f-3bf751a20eda"
+	],
+	"folders_order": [],
+	"folders": [],
+	"requests": [
+		{
+			"id": "2dddcb2d-00ff-412a-8f20-4ad0915a452a",
+			"name": "http://localhost:8080/credit/list",
+			"url": "http://localhost:8080/credit/list",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "89257bf8-a271-44bc-8b65-1531a8ad032c",
+			"name": "http://localhost:8080/customer_black_list",
+			"url": "http://localhost:8080/customer_black_list",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n\t\"customerId\": 1\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "9759a5e8-1dae-4768-9850-164b64917c80",
+			"name": "http://localhost:8080/credit",
+			"url": "http://localhost:8080/credit",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\r\n  \"customerId\": \"1\",\r\n  \"customerFirstName\": \"Алексей\",\r\n  \"customerSurname\": \"Баринов\",\r\n  \"repaymentDate\": \"2022-10-10\",\r\n  \"country\": \"Россия\",\r\n  \"amount\": \"1000000000.35\"\r\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "d1d89d3e-d8f9-4c51-8c8f-3bf751a20eda",
+			"name": "http://localhost:8080/customer_black_list?customerId=1",
+			"url": "http://localhost:8080/customer_black_list?customerId=1",
+			"description": "",
+			"data": [],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "customerId",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "d370001b-f6b0-4f42-bfa1-b1ea733c6a16",
+			"name": "http://localhost:8080/country_restriction",
+			"url": "http://localhost:8080/country_restriction",
+			"description": null,
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n\t\"country\": \"Россия\",\n\t\"requestLimit\": 10\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "e0692e2a-f284-4fdd-b28e-e36994738148",
+			"name": "http://localhost:8080/credit/list",
+			"url": "http://localhost:8080/credit/list?customer_id=1",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "customer_id",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		}
+	]
+}
